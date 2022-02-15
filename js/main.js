@@ -36,9 +36,10 @@ class Books {
 
   removeBook(bookId) {
     const books = JSON.parse(localStorage.getItem('books'));
-    const remove = books.filter((book) => book.Id === Number(bookId));
+    const remove = books.filter((book) => book.Id !== Number(bookId));
     const storeBook = JSON.stringify(remove);
     localStorage.setItem('books', storeBook);
+  
   }
 }
 
