@@ -50,7 +50,7 @@ if (localStorage.getItem('books') !== null) {
     const container = document.querySelector('.books_container');
     container.insertAdjacentHTML('beforeend', Pbook);
   }
-  }
+}
 
 // add book function
 
