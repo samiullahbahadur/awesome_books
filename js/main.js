@@ -4,6 +4,11 @@ class Books {
     this.author = author;
   }
 
+  saveBook(BTSave) {
+    const storeBook = JSON.stringify(BTSave);
+    localStorage.setItem('books', storeBook);
+  }
+
   addBook() {
     if (
       localStorage.getItem('books') === null
@@ -16,8 +21,7 @@ class Books {
           Bauthor: this.author,
         },
       ];
-      const storeBook = JSON.stringify(books);
-      localStorage.setItem('books', storeBook);
+      this.saveBook(books);
     } else {
       const books = JSON.parse(localStorage.getItem('books'));
 
@@ -29,17 +33,14 @@ class Books {
       };
 
       books.push(book);
-      const storeBook = JSON.stringify(books);
-      localStorage.setItem('books', storeBook);
+      this.saveBook(books);
     }
   }
 
   removeBook(bookId) {
     const books = JSON.parse(localStorage.getItem('books'));
     const remove = books.filter((book) => book.Id !== Number(bookId));
-    const storeBook = JSON.stringify(remove);
-    localStorage.setItem('books', storeBook);
-  
+    this.saveBook(remove);
   }
 }
 
