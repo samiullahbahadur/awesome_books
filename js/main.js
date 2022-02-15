@@ -28,7 +28,7 @@
 
   function removeBook (bookId) {
     const books = JSON.parse(localStorage.getItem('books'));
-    const remove = books.filter(book => book.Id != bookId);
+    const remove = books.filter(book => book.Id != Number(bookId));
     const storeBook = JSON.stringify(remove);
     localStorage.setItem('books', storeBook);
   }
@@ -75,6 +75,6 @@ const btn = document.querySelectorAll('.btn');
 btn.forEach(element => {
   element.addEventListener('click',function(){
     removeBook(this.id);
-    location.reload();
+    this.parentNode.remove();
   });
 });
