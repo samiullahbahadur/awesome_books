@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/samiullahbahadur/awesome_books/issues"
   },
-  "homepage": "https://github.com/samiullahbahadur/awesome_books#readme"
+  "homepage": "https://github.com/samiullahbahadur/awesome_books#readme",
+  "devDependencies": {
+    "hint": "^6.1.9"
+  }
 }
