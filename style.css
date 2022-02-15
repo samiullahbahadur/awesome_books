@@ -1,3 +1,64 @@
-body {
+* {
   padding: 0;
+  margin: 0;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+main {
+  display: grid;
+  justify-content: center;
+  text-align: center;
+}
+
+table { 
+  border: solid 1px #ddd;
+  border-radius: 6px;
+  margin-bottom: 30px;
+} 
+
+.line_hd {
+  background-color: #04AA6D;
+  color: white;
+}
+
+.line_hd:hover{
+  background-color: #04AA6D;
+}
+
+table tr { 
+  display: grid; 
+  grid-template-columns: 200px 200px 100px; 
+  justify-items: left; 
+  padding: 6px 20px 3px 10px;
+  height: 20px;
+}
+
+table tr:nth-child(even) { 
+  background-color: rgba(128, 128, 128, 0.411); 
+} 
+
+tr:hover {
+  background-color: #dddddd7a;
+}
+
+#add_book {
+  width: 50%;
+  margin: 10px auto;
+  text-align: center;
+}
+
+input {
+  width: 80%;
+  margin: 10px auto;
+  height: 13px;
+  border-radius: 5px;
+  display: block;
+  padding: 8px;
+  font-size: 16px;
+}
+
+form > button {
+  width: 60px;
+  height: 20px;
+  margin-left: 10px;
 }
