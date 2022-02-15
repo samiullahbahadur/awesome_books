@@ -74,8 +74,8 @@ document.querySelector("#book-form").addEventListener("submit", (e) => {
 
 const btn = document.querySelectorAll(".btn");
 btn.forEach((element) => {
-  element.addEventListener("click", function () {
+  element.addEventListener("click", function rem() {
     removeBook(this.id);
     this.parentNode.remove();
-  });
+  })();
 });
