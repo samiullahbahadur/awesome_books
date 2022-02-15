@@ -45,20 +45,18 @@ function displayBook(){
   if (localStorage.getItem('books') !== null) { 
     const books = JSON.parse(localStorage.getItem('books'));
     for (let i = 0; i < books.length; i++) {
-      const Pbook = `
-      <div class="book">
-      <div class="title">  Title: ${books[i].Btitle}</div>
-      <div class="auther"> Author: ${books[i].Bauthor}</div>
-      <button type="button" class="btn" id="${books[i].Id}">Remove</button>
-      <hr>
-    </div>`;
-      const container = document.querySelector('.books_container');
-      container.insertAdjacentHTML('beforeend', Pbook);
+      const list = document.querySelector('.books_table');
+      const row = document.createElement('tr');
+      row.innerHTML = ` <td>${books[i].Btitle}</td> 
+      <td>${books[i].Bauthor}</td> <td>
+      <button type="submit" id="${books[i].Id}" class="btn">Remove</button></td> `;
+      list.appendChild(row); 
     }
   }
 }
 
 displayBook();
+
 
 // add book function
 
@@ -83,6 +81,7 @@ btn.forEach(element => {
   element.addEventListener('click',function(){
     let removeBk = new Books();
     removeBk.removeBook(this.id);
-    this.parentNode.remove();
+    this.parentNode.parentNode.remove();
+    console.log(this.parentNode.parentNode);
   });
 });
