@@ -1,7 +1,7 @@
 * {
   padding: 0;
   margin: 0;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
 }
 
 main {
@@ -10,35 +10,35 @@ main {
   text-align: center;
 }
 
-table { 
+table {
   border: solid 1px #ddd;
   border-radius: 6px;
-  margin-bottom: 30px;
-} 
+  margin-bottom: 20px;
+}
 
 .line_hd {
-  background-color: #04AA6D;
+  background-color: #04aa6d;
   color: white;
 }
 
-.line_hd:hover{
-  background-color: #04AA6D;
+.line_hd:hover {
+  background-color: #04aa6d;
 }
 
-table tr { 
-  display: grid; 
-  grid-template-columns: 200px 200px 100px; 
-  justify-items: left; 
+table tr {
+  display: grid;
+  grid-template-columns: 200px 200px 100px;
+  justify-items: left;
   padding: 6px 20px 3px 10px;
   height: 20px;
 }
 
-table tr:nth-child(even) { 
-  background-color: rgba(128, 128, 128, 0.411); 
-} 
-
 tr:hover {
   background-color: #dddddd7a;
+}
+
+table tr:nth-child(even) {
+  background-color: rgba(128, 128, 128, 0.411);
 }
 
 #add_book {
@@ -61,4 +61,8 @@ form > button {
   width: 60px;
   height: 20px;
   margin-left: 10px;
+  cursor: pointer;
+}
+.btn {
+  cursor: pointer;
 }
