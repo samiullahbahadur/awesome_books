@@ -36,6 +36,10 @@ ul li a {
   margin-top: 30px;
   display: none;
 }
+.books_container h1 {
+  text-align: center;
+  padding: 10px;
+}
 
 main {
   position: absolute;
