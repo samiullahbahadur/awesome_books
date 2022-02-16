@@ -9,31 +9,41 @@
   <body>
     <main>
       <!-- Header Section -->
-      <h2>Awesome books</h2>
+      <h1>Awesome books</h1>
       
       <!-- List Section -->
       <section class="books_container">
+        <table class="books_table"> 
+          <tr class="line_hd">
+            <th>Title</th>
+            <th>Author</th>
+            <th>action</th>
+          </tr>
+
+        </table>
         <!--- List of all the books-->
         
       </section>
      
     <section id="add_book">
+      <h2>Add a new book</h2>
       <div id="add" class="add-new section hidden">
         <form id="book-form">
-          <p><input
+          <input
             type="text"
             id="title"
             class="text-inpute"
             placeholder="Title"
-          /></p>
-          <p><input
+          />
+          <input
             type="text"
             id="author"
             class="text-inpute"
             placeholder="Author"
-          /></p>
+          />
           <button type="submit" id="button">Add</button>
         </form>
+        <span id="error"></span>
       </div>
     </section>
       

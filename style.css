@@ -1,3 +1,70 @@
-body {
+* {
   padding: 0;
+  margin: 0;
+  font-family: "Courier New", Courier, monospace;
+}
+
+main {
+  display: grid;
+  justify-content: center;
+  text-align: center;
+}
+
+table {
+  border: solid 1px #ddd;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+.line_hd {
+  background-color: rgb(100, 101, 105);
+  color: white;
+}
+
+.line_hd:hover {
+  background-color: #04aa6d;
+}
+
+table tr {
+  display: grid;
+  grid-template-columns: 200px 200px 100px;
+  justify-items: left;
+  padding: 6px 20px 3px 10px;
+  height: 20px;
+}
+
+tr:hover {
+  background-color: #e0c5c57a;
+}
+
+table tr:nth-child(even) {
+  background-color: rgba(128, 128, 128, 0.411);
+}
+
+#add_book {
+  width: 50%;
+  margin: 10px auto;
+  text-align: center;
+}
+
+input {
+  width: 80%;
+  margin: 10px auto;
+  height: 13px;
+  border-radius: 5px;
+  display: block;
+  padding: 8px;
+  font-size: 16px;
+}
+
+form > button {
+  width: 60px;
+  height: 20px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  cursor: pointer;
+  background-color: orange;
 }
