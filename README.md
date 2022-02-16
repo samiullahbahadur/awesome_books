@@ -12,24 +12,28 @@
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps:
+
 - Open Terminal.
 - Change the current working directory to the location you want the cloned directory.
 - Enter the following:
+
 ```
 $ https://github.com/samiullahbahadur/awesome_books.git
 
 ```
+
+## Live Demo
+
+[Live Demo Link](https://samiullahbahadur.github.io/awesome_books/)
+
 - Press Enter to create your local clone.
-- run ```cd awesome-books``
+- run ``cd awesome-books`
 - now you an open the project with any code editor and go live or simply open the index.html page with the browser.
 
-
-
 ### Prerequisites
+
 - GitHub
 - Git
-
-
 
 ## Authors
 
