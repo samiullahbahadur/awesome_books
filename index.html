@@ -7,27 +7,39 @@
     <title>Awsome Books</title>
   </head>
   <body>
+    <header>
+      <div class="logo"><p>Awesome Books</p></div>
+      <ul class="navbar">
+        <li ><a href="#list" id="list-link" class="links active">List</a></li>
+        <li ><a href="#add_book" id="add-link" class="links">Add new</a></li>
+        <li ><a href="#contact" id="contact-link" class="links">Contact</a></li>
+      </ul>
+    </header>
     <main>
       <!-- Header Section -->
-      <h1>Awesome books</h1>
+      
+     
       
       <!-- List Section -->
-      <section class="books_container">
+      <section class="books_container" id="list">
+         <h1>Awesome books</h1>
         <table class="books_table"> 
+          <thead>
           <tr class="line_hd">
             <th>Title</th>
             <th>Author</th>
             <th>action</th>
           </tr>
+        </thead>
 
         </table>
         <!--- List of all the books-->
         
       </section>
      
-    <section id="add_book">
+    <section id="add_book" >
       <h2>Add a new book</h2>
-      <div id="add" class="add-new section hidden">
+      <div class="add-new section hidden">
         <form id="book-form">
           <input
             type="text"
@@ -47,7 +59,22 @@
       </div>
     </section>
       
-    
+     <!-- Contact Section -->
+
+     <section id="contact" class="contact-us ">
+      <h2>Contact Information</h2>
+      <p>
+        Do have any question or you just want to say "hello" <br />
+        You can Reach out to us!
+      </p>
+      <ul>
+        <li>Our E-mail: books@awesome.com</li>
+        <li>Our Phone Number: 003311223344</li>
+        <li>Our Adress: John Doe street, 22, 883322 Vikings, Valhala</li>
+      </ul>
+     </section>
+    <!-- Footer Section -->
+    <footer><p>Copyright: All rights reserved</p></footer>
     </main>
     <script src="js/main.js"></script>
   </body>
