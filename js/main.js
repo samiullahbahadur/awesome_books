@@ -2,44 +2,38 @@ class Books {
   constructor(title = '', author = '') {
     this.title = title;
     this.author = author;
+    this.books = (localStorage.getItem('books') !== null) ? JSON.parse(localStorage.getItem('books')) : '';
   }
 
-  saveBook(BTSave) {
+  saveBook(BTSave = this.books) {
     const storeBook = JSON.stringify(BTSave);
     localStorage.setItem('books', storeBook);
   }
 
   addBook() {
-    if (
-      localStorage.getItem('books') === null
-      || JSON.parse(localStorage.getItem('books')).length <= 0
-    ) {
-      const books = [
+    if (this.books === '' || this.books.length <= 0) {
+      this.books = [
         {
           Id: 1,
           Btitle: this.title,
           Bauthor: this.author,
         },
       ];
-      this.saveBook(books);
+      this.saveBook();
     } else {
-      const books = JSON.parse(localStorage.getItem('books'));
-
-      const lastId = books[books.length - 1].Id + 1;
+      const lastId = this.books[this.books.length - 1].Id + 1;
       const book = {
         Id: lastId,
         Btitle: this.title,
         Bauthor: this.author,
       };
-
-      books.push(book);
-      this.saveBook(books);
+      this.books.push(book);
+      this.saveBook();
     }
   }
 
   removeBook(bookId) {
-    const books = JSON.parse(localStorage.getItem('books'));
-    const remove = books.filter((book) => book.Id !== Number(bookId));
+    const remove = this.books.filter((book) => book.Id !== Number(bookId));
     this.saveBook(remove);
   }
 }
@@ -81,7 +75,7 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
 
 const btn = document.querySelectorAll('.btn');
 btn.forEach((element) => {
-  element.addEventListener('click', function rem() {
+  element.addEventListener('click', function () {
     const removeBk = new Books();
     removeBk.removeBook(this.id);
     this.parentNode.parentNode.remove();
