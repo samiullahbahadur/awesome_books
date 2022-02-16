@@ -36,25 +36,25 @@ class Books {
     const remove = this.books.filter((book) => book.Id !== Number(bookId));
     this.saveBook(remove);
   }
+
+  static displayBook(book) {
+    const list = document.querySelector('.books_table');
+    const row = document.createElement('tr');
+    row.innerHTML = ` <td>${book.Btitle}</td> 
+    <td>${book.Bauthor}</td> <td>
+    <button type="submit" id="${book.Id}" class="btn">Remove</button></td> `;
+    list.appendChild(row);
+  }
 }
 
 //  display all the books;
 
-function displayBook() {
-  if (localStorage.getItem('books') !== null) {
-    const books = JSON.parse(localStorage.getItem('books'));
-    for (let i = 0; i < books.length; i += 1) {
-      const list = document.querySelector('.books_table');
-      const row = document.createElement('tr');
-      row.innerHTML = ` <td>${books[i].Btitle}</td> 
-      <td>${books[i].Bauthor}</td> <td>
-      <button type="submit" id="${books[i].Id}" class="btn">Remove</button></td> `;
-      list.appendChild(row);
-    }
-  }
+if (localStorage.getItem('books') !== null) {
+  const books = JSON.parse(localStorage.getItem('books'));
+  books.forEach((element) => {
+    Books.displayBook(element);
+  });
 }
-
-displayBook();
 
 // add book function
 
@@ -63,7 +63,9 @@ const author = document.getElementById('author');
 
 document.querySelector('#book-form').addEventListener('submit', (e) => {
   if (title.value === '' || author.value === '') {
-    alert('Title and Author fields must be filled out');
+    const error = document.getElementById('error');
+    error.textContent = 'Title and Author fields must be filled out';
+    error.style.color = 'red';
     e.preventDefault();
   } else {
     const addBk = new Books(title.value, author.value);
@@ -73,11 +75,13 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
 
 // Remove book function
 
+function removeBk() {
+  const Book = new Books();
+  Book.removeBook(this.id);
+  this.parentNode.parentNode.remove();
+}
+
 const btn = document.querySelectorAll('.btn');
 btn.forEach((element) => {
-  element.addEventListener('click', function () {
-    const removeBk = new Books();
-    removeBk.removeBook(this.id);
-    this.parentNode.parentNode.remove();
-  });
+  element.addEventListener('click', removeBk);
 });
