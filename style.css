@@ -2,17 +2,23 @@
   padding: 0;
   margin: 0;
   font-family: "Courier New", Courier, monospace;
+  box-sizing: border-box;
 }
 
 /* navbar section */
 header {
   display: flex;
-  padding: 5px 60px;
   justify-content: space-between;
   align-items: center;
-  height: 50px;
-  border-bottom: solid 3px black;
+  height: 62px;
+  box-shadow: 0 0 10px #c5c2c2;
+  z-index: 100;
+  position: fixed;
+  width: 100%;
+  background-color: white;
+  padding: 0 10%;
 }
+
 .navbar {
   display: flex;
   column-gap: 20px;
@@ -25,28 +31,44 @@ ul li a {
   font-weight: 800;
   color: black;
 }
+
+.navbar li {
+  width: 100px;
+}
+
 .active {
   color: pink;
+  transform: scale(1.3);
+  display: block;
 }
+
 .logo {
   font-size: 20px;
   font-weight: 800;
 }
+
 .books_container {
   margin-top: 30px;
-  display: none;
+}
+
+.books_container > div {
+  background: white;
+  height: 57vh;
+  border-radius: 29px;
+  padding: 20px;
+  overflow-y: scroll;
 }
 
 main {
   position: absolute;
+  top: 60px;
   background-color: beige;
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: calc(100vh - 90px);
-  justify-content: flex-start;
+  height: calc(100vh - 124px);
+  justify-content: center;
   align-items: center;
-  z-index: 2;
 }
 
 table {
@@ -69,7 +91,7 @@ table tr {
   grid-template-columns: 200px 200px 100px;
   justify-items: left;
   padding: 6px 20px 3px 10px;
-  height: 20px;
+  height: 30px;
 }
 
 tr:hover {
@@ -82,15 +104,15 @@ table tr:nth-child(even) {
 
 #add_book {
   display: none;
-  width: 20%;
-  margin-top: 30px;
+  width: 45%;
+  margin-top: -100px;
   text-align: center;
 }
 
 input {
   width: 80%;
   margin: 10px auto;
-  height: 13px;
+  height: 36px;
   border-radius: 5px;
   display: block;
   padding: 8px;
@@ -111,14 +133,10 @@ form > button {
 
 /***  Contact Section  ***/
 .contact-us {
-  visibility: hidden;
-  background-color: beige;
-  display: flex;
+  display: none;
   flex-direction: column;
-  width: 100%;
-  height: calc(100vh - 90px);
-  justify-content: flex-start;
   align-items: center;
+  margin-top: -100px;
 }
 
 .contact-us h2 {
@@ -135,12 +153,15 @@ form > button {
 
 /***  Footer Section  ***/
 footer {
-  bottom: 0%;
+  position: fixed;
+  bottom: 0;
   width: 100%;
   text-align: left;
-  height: 40px;
+  height: 66px;
   font-weight: 800;
-  border-top: solid 2px black;
-  padding-top: 5px;
-  padding-left: 60px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 11px 0 #c5c2c2;
 }
