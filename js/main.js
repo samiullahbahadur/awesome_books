@@ -144,8 +144,8 @@ function showBlock(e) {
       break;
 
     default:
-      sectionList.style.display = "block";
-      sectionAdd.style.display = "none";
+      sectionAdd.style.display = "block";
+      sectionList.style.display = "none";
       sectionContact.style.display = "none";
       break;
   }

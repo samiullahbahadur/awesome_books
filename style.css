@@ -143,6 +143,7 @@ form > button {
   cursor: pointer;
   background-color: orange;
 }
+
 /* flash messages */
 #message-container {
   position: absolute;
@@ -153,6 +154,7 @@ form > button {
   flex-direction: column;
   animation: fade-in 3s ease;
 }
+
 .snakbar {
   padding: 1.5rem 1rem;
   margin: 0.5rem;
@@ -161,30 +163,38 @@ form > button {
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
   color: white;
 }
+
 .error {
   background-color: red;
 }
+
 .success {
   background-color: green;
 }
+
 .remove {
   background-color: orange;
 }
+
 .fadeout {
   animation: fade-out 1s ease 3s forwards;
 }
+
 @keyframes fade-in {
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
 }
+
 @keyframes fade-out {
   0% {
     opacity: 1;
   }
+
   100% {
     opacity: 0;
   }

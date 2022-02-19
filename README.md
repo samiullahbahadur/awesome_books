@@ -8,6 +8,11 @@
 
 - HTML
 - Javascript
+- CSS
+
+## Live Demo
+
+[Live Demo Link](https://samiullahbahadur.github.io/awesome_books/)
 
 ## Getting Started
 
@@ -21,10 +26,6 @@ To get a local copy up and running follow these simple example steps:
 $ https://github.com/samiullahbahadur/awesome_books.git
 
 ```
-
-## Live Demo
-
-[Live Demo Link](https://samiullahbahadur.github.io/awesome_books/)
 
 - Press Enter to create your local clone.
 - run ``cd awesome-books`
